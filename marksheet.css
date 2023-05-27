@@ -1,0 +1,72 @@
+.logo{
+    width: 120px;
+    height: 120px;
+}
+.logo1{ 
+    float: right;
+    width: 120px;
+    height: 120px;
+}
+
+
+.main-contener{
+    width: 80%;
+    height: 100%;
+    border: 1px solid black;
+} 
+.head{ 
+    width: 78%;
+    float: right;
+}
+.name{ width: 20%;
+    float: right;
+}
+.school{
+    width: 79%;
+    float: left;
+}
+ .box{ width: 95%;
+    text-align: center;
+    font-size: 45px; 
+}
+.box1{
+    text-align: center;
+    font-size: larger;
+}
+.report{
+    text-align: center;
+    padding-top: 55px;
+    font-size: 25px;
+}
+ .add{
+    text-align: center;
+    padding: 10px;
+    font-size: 30px;
+ }
+ .box2{
+    width: 30%;
+    padding: 20px;
+ }
+ .text{
+    padding-top: 25px;
+    font-size: 20px;
+ }
+ .box3{ 
+    width: 25%;
+    padding: px;
+    float: right;
+    margin-top: -182px;
+
+ }
+ .part{margin-top: 66px;
+    text-align: center;
+    font-size: 23px;
+    padding-bottom: 10px;
+ }
+ table{
+    width: 100%;
+    font-size: larger;
+    text-align: center;
+    padding: 5px; 
+    border-collapse: collapse;
+ }
