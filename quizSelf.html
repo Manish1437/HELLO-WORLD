@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    font-family: "poppins", sans-serif;
+    box-sizing: border-box;
+  }
+  body {
+    background: #001e4d;
+  }
+  #app {
+    background: #fff;
+    width: 90%;
+    max-width: 600px;
+    margin: 100px auto 0;
+    border-radius: 20px;
+    padding: 30px;
+  }
+  #answer-buttons{
+    padding: 15px ;        
+}
+.btn{
+  margin-top: 15px;
+    padding: 8px 0px 8px 15px ;
+    display: block;
+    width: 100%;
+    text-align: start;
+    border-radius: 8px;
+    border: none;
+}
+.btn:hover:not([disabled]){
+    background-color: rgb(109, 108, 108);
+    cursor: pointer; 
+    color: #fff;
+}
+.btn:disabled{
+    cursor: no-drop;
+}
+
+#next-btn{
+    border: none;
+  margin-left: 220px;
+  padding: 7px 30px;
+  font-size: larger;
+  border-radius: 10px;
+  background-color: rgb(254, 200, 99);
+  color: white;
+  cursor: pointer;
+}
+.correct{
+    background: #9aeabc;
+}
+.inCorrect{
+    background: #ff9393;
+}
+    </style>
+</head>
+<body>
+    <div class="quiz" id ="app">
+        <h2 id="question">Question and Ansewer</h2>
+        <div id="answer-buttons">
+          <button class="btn">Answer1</button> 
+          <button class="btn">Answer2</button> 
+          <button class="btn">Answer3</button> 
+          <button class="btn">Answer4</button> 
+        </div>
+        <button id="next-btn">Next</button>
+      </div>
+
+      <script>
+        const questions = [
+            {
+                question: "what is your name?",
+                answers:[
+                    {text:"Manish",correct:false},
+                    {text:"Rajesh",correct:true},
+                    {text:"Akash",correct:false},
+                    {text:"Rajiv",correct:false},
+                ]
+            },
+            {
+                question: "what is your father name?",
+                answers:[
+                    {text:"Manish",correct:false},
+                    {text:"Rajesh",correct:false},
+                    {text:"Akash",correct:true},
+                    {text:"Rajiv",correct:false},
+                ]
+            },
+            {
+                question: "what is your feverate colour" ,
+                answers:[
+                    {text:"Red",correct:false},
+                    {text:"Orange",correct:false},
+                    {text:"Black",correct:true},
+                    {text:"Blue",correct:false},
+                ]
+            },
+            {
+                question: "what is your age ?",
+                answers:[
+                    {text:21,correct:false},
+                    {text:20,correct:false},
+                    {text:19,correct:false},
+                    {text:18,correct:true},
+                ]
+            }
+        ]
+
+        const questionElement = document.getElementById("question");
+        const answerButton = document.getElementById("answer-buttons");
+        const nextBtn = document.getElementById("next-btn");
+             
+        currentQuestioinIndex = 0;
+        score = 0;
+        function startQuiz(){
+            currentQuestioinIndex = 0;
+            score = 0;
+            nextBtn.innerHTML = "Next"
+            showQuestion()
+        }
+
+        function showQuestion(){
+            const currentQuestion =questions[currentQuestioinIndex];
+            const questionNo = currentQuestioinIndex + 1;
+            questionElement.innerHTML = questionNo + " . " +currentQuestion.question;
+
+            for(const answer of currentQuestion.answers){
+                const button = document.createElement("button");
+                button.innerHTML = answers.text;
+                button.classList.add("btn");
+                answerButton.appendChild(button);
+                if(answer.correct){
+                    answer.dataset.correct=answer.correct;
+                }
+                    button.addEventListener("click" , selectAnswer)
+                 
+            }
+            function selectAnswer(e){
+                const selectBtn = e.target;
+                const isCorrect = selectBtn.dataset.correct === "true";
+                if (isCorrect){
+                    selectBtn.classList.add("correct")
+                    score++;
+                }else{
+                    selectBtn.classList.add("inCorrect")
+
+                }
+
+
+            }
+            
+        }showQuestion()
+        
+      </script>
+    
+</body>
+</html>

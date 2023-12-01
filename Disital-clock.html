@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disital-Clock</title>
+    <style>
+        body{
+            background-color: #212121;
+            color: #fff;
+        }
+        nav{
+            background-color: #fff;
+            justify-content: center;
+            display: flex;
+            height: 50px;
+
+        }
+        nav a{
+            background-color: gray;
+            color: #fff;
+            height: 20px;
+            border-radius: 10px;
+            margin: 5px 25px;
+            border: 1px solid black;
+            padding: 9px 25px;
+            text-decoration: none;
+           
+            
+            
+        }
+        .center{
+            display: flex;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        #clock{
+            font-size: 40px;
+            background-color: orange;
+            padding: 20px 50px;
+            margin-top: 10px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+       <a href="/" aria-current="page">Home</a>
+       <a href="https://www.youtube.com/@chaiaurcode">Youtube Channel</a>
+    </nav>
+    <div class="center">
+        <div id="banner"><span>Your local time</span></div>
+        <div id="clock"></div>
+    </div>
+    <script>
+        const clock=document.getElementById("clock");
+       
+
+        setInterval(function(){
+            let date =new Date()
+       // console.log(date.toLocaleTimeString());
+       clock.innerHTML = date.toLocaleTimeString();
+        },1000)
+    </script>
+</body>
+</html>
